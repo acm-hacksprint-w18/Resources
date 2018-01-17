@@ -2,7 +2,7 @@
 
 ## Welcome to Hack Sprint
 
-All of us have great ideas about apps or products that we think could revolutionize the world, or make a positive impact on our community. Too often, however, these ideas are never realized because we lack the knowledge or experience to build them. Hack Sprint was created specifically to address this issue - to give you the skills, tools, and environment that will help you to build that app you've always wanted to. 
+All of us have great ideas about apps or products that we think could revolutionize the world and make a positive impact on our community. Too often, however, these ideas are never realized because we lack the knowledge or experience to build them. Hack Sprint was created specifically to address this issue - to give you the skills, tools, and environment that will help you to build that app you've always wanted to. 
 
 Over the next eight weeks, we'll hold four learning sessions and four hack sessions. 
 
