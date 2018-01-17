@@ -21,6 +21,7 @@ We hope you have a blast this quarter, and encourage you to reach out to any of 
 ## <a id="cc">Course Curriculum</a>
 
 - Week 2: Introduction to iOS Development
+  - [Github Repository](https://github.com/acm-hacksprint-w18/session-1)
 - Week 3: Multiview Applications and Segues
 - Week 4: UITableView and Animation
 - Week 5: CocoaPods and AlamoFire
