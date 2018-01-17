@@ -15,7 +15,9 @@
   - <a href="#timer">Implementing a Timer</a>
   - <a href="#tap">Disabling and Enabling the Tap Button</a>
 - Keeping Track of High Score
-  - ​
+  - <a href="#backToIB">Back to the Interface Builder</a>
+  - <a href="#linkingLabel">Linking the Label to our Code</a>
+  - <a href="#highscore">Implementing a High Score</a>
 
 ## <a id="gs">Getting Started</a>
 
@@ -414,7 +416,7 @@ var time: Double = 10
 
 Let's implement a High Score tracker that persists data on the user's phone (so it remembers the user's high score even after the app has been exited!)
 
-### Back to the Interface Bulder
+### <a id="backToIB">Back to the Interface Bulder</a>
 
 1. Return via the Project Navigator to **Main.storyboard**.
 2. In the bottom-right pane, scroll down until you see the "Label" element.
@@ -436,7 +438,7 @@ Let's implement a High Score tracker that persists data on the user's phone (so 
 
 <img src="https://lh4.googleusercontent.com/WtWpYSahXcBCfoAPcYw69AceOFYnlC_fRudgnBsfjNfpAr5soS0G52XucLsMmOHWbZMlutbcHQP6SVLccfcJ24xA8PIyAF8WzDBF9s-qF0AbaWiYrDN6NSZEVN73xOUhGG8tquwD" width="300px">
 
-### Linking the Label to our Code
+### <a id="linkingLabel">Linking the Label to our Code</a>
 
 1. Open the **Assistant Editor** using the icon with two overlapping circles near the top-right corner of Xcode.
 2. While holding down control, click on the High Score label we just created and drag to the space directly **below** the startButton line we just made.
@@ -454,7 +456,7 @@ Let's implement a High Score tracker that persists data on the user's phone (so 
 
 ---
 
-### Implementing a High Score
+### <a id="highscore">Implementing a High Score</a>
 
 1. In the Project Navigator on the left, ensure that you have selected **ViewController.swift**.
 
