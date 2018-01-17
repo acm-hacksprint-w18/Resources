@@ -36,5 +36,6 @@ We hope you have a blast this quarter, and encourage you to reach out to any of 
 ## <a id="learning">Learning Outside of Hack Sprint</a>
 
 - [ACM Hacks' Guide To Swift](https://github.com/acm-hacksprint-w18/Resources/blob/master/Hack%20Sprint%20-%20Guide%20to%20Swift.md) which will be frequently updated over the course of Winter Quarter to include extra topics not covered in session.
+- [ACM Hack Screencasts](https://www.youtube.com/watch?v=2Bt58M-S7jM&list=PLgx-VWa_wvA5X0N5WzGhiywhbJrr18401) courtesy of Hack member Shannon Phu which are live tutorials taught by Shannon herself!
 -  [Apple's Swift Documentation](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/index.html#//apple_ref/doc/uid/TP40014097-CH3-ID0)
 - https://www.raywenderlich.com which contains a lot of great, up-to-date, and well-written iOS tutorials.
