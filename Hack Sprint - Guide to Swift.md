@@ -39,7 +39,7 @@ The value of a **constant** cannot be changed once it is set, whereas a **variab
 
 We use the `let` keyword to declare a constant, and the `var` keyword to declare a variable.
 
-```
+```swift
 let maximumLoginAttempts = 10
 var currentNumberOfAttempts = 0
 ```
