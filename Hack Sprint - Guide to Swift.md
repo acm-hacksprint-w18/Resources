@@ -48,7 +48,7 @@ var currentNumberOfAttempts = 0
 
 Swift doesn’t need you to declare the type name… it can tell what a variable’s type is based on the value you assign it!
 
-```
+```swift
 var x = 5            // x is of type Int!
 var y = 3.8          // y is of type Double!
 var s = "UCLA"       // s is of type String!
@@ -59,7 +59,7 @@ var b = false        // b is of type Bool!
 
 You can provide a type annotation when you declare a constant or variable, to be clear about the kind of values the constant or variable can store.
 
-```
+```swift
 var i: Int
 var d: Double
 var c: Character = "C"
@@ -69,7 +69,7 @@ var c: Character = "C"
 
 In Swift, you cannot use uninitialized data: you must assign a value to a variable before using it.
 
-```
+```swift
 // BAD:
 var num: Int
 var tripleNum = num * 3	// Error! num has not been given a value.
@@ -89,7 +89,7 @@ By default, it terminates the line it prints with a line break (\n).
 
 To print a value without a line break after it, pass an empty string as the terminator—for example, `print(someValue, terminator: "")`
 
-```
+```swift
 var x = 6
 var y = "foobar"				// This code prints:
 print("Hello World!")			// Hello World!
@@ -117,7 +117,7 @@ There are two ways to declare an array. There is no difference between them exce
 
 **Note:** The following statements only **declare** an array; they do not **initialize** them. You must initialize your array before you can use it.
 
-```
+```swift
 var a: Array<Int>		// Declare an array of Integers
 var b: [String]			// Declare an array of Strings
 ```
@@ -126,21 +126,21 @@ var b: [String]			// Declare an array of Strings
 
 Use `()` to initialize an empty array.
 
-```
+```swift
 var arrayOfInts = Array<Int>()	// Empty array of Integers
 var arrayOfBools = [Bool]()
 ```
 
 Use `[item1, item2, ...]` to initialize an array with values item1, item2, ...
 
-```
+```swift
 var arrayOfStrings = ["eggs", "milk"]
 // arrayOfStrings is now ["eggs", "milk"]
 ```
 
 Use `Array(repeating:count:)` to initialize an array with a value repeated `count` times.
 
-```
+```swift
 var arrayOfDoubles = Array(repeating: 2.5, count: 3)
 // arrayOfDoubles is now [2.5, 2.5, 2.5]
 ```
@@ -149,7 +149,7 @@ var arrayOfDoubles = Array(repeating: 2.5, count: 3)
 
 Here are some ways you can add/delete items in an array:
 
-```
+```swift
 var arrayOfNumbers = [1, 2, 3, 4, 5]
 
 arrayOfNumbers.append(10)			// [1, 2, 3, 4, 5, 10]
@@ -164,7 +164,7 @@ arrayOfNumbers.remove(at: 0)	// [2, 20, 3, 4, 5, 100, 30]
 
 Here are some ways you can access/modify elements in an array:
 
-```
+```swift
 var arrayOfNumbers = [1, 2, 3, 4, 5]
 
 print(arrayOfNumbers[3])		// will print "4"
@@ -188,7 +188,7 @@ There are two ways to declare a dictionary. There is no difference between them 
 
 **Note:** The following statements only **declare** a dictionary; they do not **initialize** them. You must initialize your dictionary before you can use it.
 
-```
+```swift
 Dictionary<Int, String>		// Dictionary of Int -> String
 [String : Bool]				// Dictionary of String -> Bool
 ```
@@ -197,20 +197,20 @@ Dictionary<Int, String>		// Dictionary of Int -> String
 
 Use `()` to initialize an empty dictionary.
 
-```
+```swift
 var intToString = Dictionary<Int, String>()
 var intToBool = [Int : Bool]()
 ```
 
 Use `[item1, item2, ...]` to specify initial values for the dictionary.
 
-```
+```swift
 var groceryCosts = ["eggs" : 4.20, "milk" : 3.99]
 ```
 
 #### <a id="15">Adding/Deleting Items</a>
 
-```
+```swift
 var airports: [String : String]()	// Empty dictionary
 
 airports["LAX"] = "LA Intl"			// Add "LAX" -> "LA Intl"
@@ -222,7 +222,7 @@ airports.removeValue(forKey: "LAX")	// key "LAX" has been removed
 
 #### <a id="16">Accessing/Modifying Elements</a>
 
-```
+```swift
 var airports = ["LAX" : "LA Intl", "JFK" : "NY Intl", "YYZ" : "Toronto Pearson"]
 
 print(airports["JFK"])				// will print "NY Intl"
@@ -239,7 +239,7 @@ arrayOfNumbers.count				// returns 3
 
 The **if statement** has a condition. It executes a certain set of statements if that condition is true, and can execute others if it is not true.
 
-```
+```swift
 let hunger = some integer value...
 
 if hunger < 20 {
@@ -262,7 +262,7 @@ You use the for-in loop to iterate over a sequence, such as items in an array, r
 
 Here's a dictionary:
 
-```
+```swift
 let numberOfLegs = ["spider" : 8, "bobber" : 4, "ant" : 6]
 
 for (animalName, legCount) in numberOfLegs {
@@ -283,7 +283,7 @@ A function takes inputs (called **parameters**) and returns some output.
 
 ### <a id="20">Declaring a Function</a>
 
-```
+```swift
 func squareNum(n: Int) -> Int {
     return n * n
 }
@@ -293,7 +293,7 @@ func squareNum(n: Int) -> Int {
 
 ### <a id="21">Calling a Function</a>
 
-```
+```swift
 let num = squareNum(n: 5)
 ```
 
@@ -303,7 +303,7 @@ let num = squareNum(n: 5)
 
 Functions don't have to have parameters or a return type:
 
-```
+```swift
 func printHelloWorld() {
     print("Hello, world!")
 }
@@ -321,7 +321,7 @@ You add functionality to your classes and structures by adding **properties** (v
 
 ### <a id="24">Declaring a Class</a>
 
-```
+```swift
 class Flatulan {
     
     /* Properties */
@@ -357,7 +357,7 @@ An initializer is the exact same thing as a **constructor** in C++.
 
 We declare an initializer with the `init` keyword:
 
-```
+```swift
 init(initialX: Int, initialY: Int) {
 	x = initialX
 	y = initialY
@@ -372,13 +372,13 @@ init(initialX: Int, initialY: Int) {
 
 We can create an instance of our **Flatulan** class as follows:
 
-```
+```swift
 let myFlatulan = Flatulan(initialX: 0, initialY: 0)
 ```
 
 And use it like this:
 
-```
+```swift
 myFlatulan.moveRight()
 myFlatulan.fart()
 ```
