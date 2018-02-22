@@ -28,6 +28,16 @@
   - <a href="24">Declaring a Class</a>
   - <a href="#25">Initializers</a>
   - <a href="#26">Creating a Class Instance</a>
+- <a href="#27">Optionals</a>
+  - <a href="#28">Declaration and Initialization</a>
+  - <a href="#29">nil</a>
+  - <a href="#30">Assigning Optionals a Value</a>
+  - <a href="#31">Unwrapping an Optional</a>
+    - <a href="#32">Force Unwrapping</a>
+    - <a href="#33">Optional Chaining</a>
+    - <a href="#34">Optional Binding</a>
+  - <a href="#35">Implicitly Unwrapped Optionals</a>
+- Anonymous Functions (Closures)
 
 ---
 
@@ -383,3 +393,110 @@ myFlatulan.moveRight()
 myFlatulan.fart()
 ```
 
+---
+
+## <a id="27">Optionals</a>
+
+Optionals are a powerful feature in Swift language which solve the problem of non-existent values. An Optional is just a type in Swift - like an Int, String, or Double. Think of an optional as a type of wrapper; it's like a parcel that might have something inside it, or it might have nothing at all. Only until you open the parcel will you know which of the two is the case.
+
+If you're similar with C++, optionals work very similarly to pointers (although, you'll soon see that they're much more flexible).
+
+### <a id="28">Declaration and Initialization</a>
+
+You can declare an optional using the `?` token:
+
+```swift
+var maybeInt: Int?
+var maybeString: String?
+```
+
+### <a id="29">nil</a>
+
+**nil** is a special token in Swift that stands for nothing. Optionals are the only type in Swift that have a default value when you declare them; that default value is nil.
+
+If you're familair with C++, the `nil` keyword is essentially the same as `nullptr` or `NULL`.
+
+### <a id="30">Assigning Optionals a Value</a>
+
+Assigning a value to an optional of type $$T$$ is the exact same as assigning a value to a normal variable of type $$T$$. That is, the syntax for assigning a value of "5" to an **Int variable** is the exact same as assigning a value of "5" to an **Int optional**.
+
+```swift
+var num: Int			// num is uninitialized right now
+var maybeNum: Int?		// maybeNum is nil right now
+
+num = 5					// num is initialized with a value of 5
+maybeNum = 5			// maybeNum now has a value of 5
+```
+
+### <a id="31">Unwrapping an Optional</a>
+
+To actually access and use the value inside an optional, we need to **unwrap** it. There are three main ways to do this:
+
+#### <a id="32">Force Unwrapping</a>
+
+The first way you can unwrap an optional is by using the `!` token:
+
+```swift
+var maybeInt: Int? = 5
+
+if maybeInt != nil {
+    print("maybeInt has an integer value of \(maybeInt!).")
+}
+```
+
+This method is called **force unwrapping** because it assumes there is a value inside of the optional (i.e. the optional is not `nil`) and tries to use it. If the optional **is nil**, however, **force unwrapping will cause your program to crash**.
+
+This is comparable to dereferencing a pointer in C++; if the pointer is `nullptr` when you try to dereference it your program will crash.
+
+#### <a id="33">Optional Chaining</a>
+
+We can also have optional class variables. Consider the following class:
+
+```swift
+class Bird {
+  func fly() {
+    print("I am flying!")
+  }
+}
+```
+
+Now consider the following code:
+
+```swift
+var myBird: Bird?
+myBird?.fly()		// Optional Chaining
+```
+
+Notice the `?` token after `myBird` on the second line. If `myBird` is **not nil**, then the `fly()` function is executed as normal and the program would output "I am flying!" However, if `myBird` **is nil** then the instruction is simply skipped over and not executed. This is known as **gracefully failing**, i.e. doing nothing when `myBird` is nil.
+
+#### <a id="34">Optional Binding</a>
+
+Like forced unwrapping, **optional binding** is a way of opening the box, but it does the job more cleverly. It allows us to check the optional and, if it contains a value, extract its value into a constant or variable as part of a single action. It’s useful when we need to use the unwrapped value many times.
+
+Optional Binding requires an `if` statement:
+
+```swift
+var maybeInt: Int?
+
+if let definitelyInt = maybeInt {
+  print("The value inside maybeInt is \(definitelyInt)")
+} else {
+  print("maybeInt is nil!")
+}
+```
+
+If `maybeInt` has a value (i.e. is not `nil`), the `if` condition succeeds and that value is bound to the variable `definitelyInt`. Now, inside the [scope](https://en.wikipedia.org/wiki/Scope_(computer_science)) of the if statement, that value can be accessed using the constant `definitelyInt` **which is of type Int, not Int?**.
+
+### <a id="35">Implicitly Unwrapped Optionals</a>
+
+You can declare an **implicitly unwrapped optional** by using the `!` token when you **declare** a variable:
+
+```swift
+var shouldBeInt: Int!
+```
+
+`shouldBeInt` is **still** an optional Int; it can be assigned `nil` and it can be unwrapped using any of the three methods above.
+
+However, when you use the name `shouldBeInt` it is *really* [syntactic sugar](https://en.wikipedia.org/wiki/Syntactic_sugar) for the term `shouldBeInt`. In other words, every time you use the name `shouldBeInt` in operations you're really force unwrapping it each time.
+
+That means if `shouldBeInt` is nil but you use its name, your program will crash.
